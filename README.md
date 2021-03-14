@@ -1,2 +1,2 @@
-# HackkerRank
-This is the repository of my HackkerRank code on Python,SQL and Statistics
+# HackerRank
+This is the repository of my HackerRank code on Python,SQL and Statistics
