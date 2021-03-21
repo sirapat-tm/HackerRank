@@ -1,9 +1,18 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-p_up,p_down = list(map(int, input().rstrip().split()))
-p = p_up/p_down
-n = int(input())
 
-def geo(n,p):
-    return (1-p)**(n-1)*p
+percent,n = list(map(float, input().rstrip().split()))
+p = percent/100
 
-print(round(sum([geo(x,p) for x in range(1,6)]),3))
+import math
+def comb(n,r):
+    return math.factorial(n)/(math.factorial(r)*math.factorial(n-r))
+
+def binomial(p,n,start,stop):
+    prob = 0
+    for i in range(start,stop+1):
+        prob = prob+comb(n,i)*p**(i)*(1-p)**(n-i)
+    
+    return round(prob,3)
+
+print(binomial(p,n,0,2))
+print(binomial(p,n,2,10))
